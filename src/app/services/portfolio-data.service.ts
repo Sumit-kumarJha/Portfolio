@@ -239,6 +239,16 @@ export class PortfolioDataService {
       platform: 'Codeforces',
       icon: 'code',
     },
+    {
+      title: 'GeeksforGeeks Problem Solving',
+      metric: 'Active Practice',
+      subtitle: 'Data Structures & Algorithms',
+      description:
+        'Continuous problem solving across core DSA, dynamic programming, graphs, and algorithmic paradigms with optimal sub-second Java solutions.',
+      badge: 'GeeksforGeeks',
+      platform: 'GFG',
+      icon: 'terminal',
+    },
   ];
 
   readonly skillGroups: SkillGroup[] = [

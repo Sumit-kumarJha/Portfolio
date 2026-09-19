@@ -38,7 +38,7 @@ export interface AchievementItem {
   subtitle: string;
   description: string;
   badge: string;
-  platform: 'LeetCode' | 'Codeforces' | 'CodeChef' | 'Contest';
+  platform: 'LeetCode' | 'Codeforces' | 'CodeChef' | 'GFG' | 'Contest';
   rankOrScore?: string;
   icon: string;
 }
