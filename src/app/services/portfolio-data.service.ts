@@ -28,7 +28,7 @@ export class PortfolioDataService {
     },
     socialLinks: {
       github: 'https://github.com/Sumit-kumarJha',
-      linkedin: 'https://linkedin.com/in/sumitkjha',
+      linkedin: 'https://www.linkedin.com/in/online-engineer/',
       leetcode: 'https://leetcode.com/u/_sumit_jha_/',
       codechef: 'https://www.codechef.com/users/sumitkjha',
       codeforces: 'https://codeforces.com/profile/Online_Engineer',
