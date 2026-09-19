@@ -1,0 +1,51 @@
+<footer class="footer">
+  <div class="container footer-container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-code">&lt;</span>
+        <span class="brand-text">Sumit<span class="highlight">.dev</span></span>
+        <span class="brand-code">/&gt;</span>
+        <p class="brand-motto">
+          Engineering scalable Java microservices, event pipelines, and high-performance algorithmic systems.
+        </p>
+      </div>
+
+      <div class="footer-nav">
+        <div class="footer-nav-col">
+          <div class="col-heading">Navigation</div>
+          <a href="#hero">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#terminal">DevCLI</a>
+        </div>
+        <div class="footer-nav-col">
+          <div class="col-heading">Showcase</div>
+          <a href="#skills">Skills</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#certifications">Certifications</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-nav-col">
+          <div class="col-heading">Profiles</div>
+          <a [href]="personal.socialLinks.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a [href]="personal.socialLinks.github" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a [href]="personal.socialLinks.leetcode" target="_blank" rel="noopener noreferrer">LeetCode (Guardian)</a>
+          <a [href]="personal.socialLinks.codechef" target="_blank" rel="noopener noreferrer">CodeChef (4-Star)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; {{ currentYear }} {{ personal.name }}. Engineered with Angular 22 &amp; TypeScript.
+      </div>
+
+      <button type="button" class="back-to-top-btn" (click)="scrollToTop()" aria-label="Back to Top">
+        <span>Back to top</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m18 15-6-6-6 6"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</footer>

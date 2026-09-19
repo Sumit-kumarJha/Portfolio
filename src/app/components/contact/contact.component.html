@@ -1,0 +1,169 @@
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <span>Get In Touch</span>
+      </div>
+      <h2 class="section-title">Let's Discuss Systems & Architecture</h2>
+      <p class="section-subtitle">
+        Whether you are scaling high-throughput microservices, exploring RAG pipelines, or seeking algorithmic depth, I'm always open to discussing new opportunities.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Direct Contact Info Column -->
+      <div class="contact-info-card glass-card">
+        <h3 class="info-card-title">Contact Channels</h3>
+        <p class="info-card-desc">
+          Feel free to reach out directly via email, phone, or connect with me on competitive programming networks.
+        </p>
+
+        <div class="info-items">
+          <!-- Email Item -->
+          <div class="info-item">
+            <div class="item-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </div>
+            <div class="item-details">
+              <div class="item-label">Direct Email</div>
+              <a [href]="'mailto:' + personal.email" class="item-val">{{ personal.email }}</a>
+            </div>
+            <button 
+              type="button" 
+              class="copy-btn" 
+              (click)="copyEmailToClipboard()" 
+              [title]="copiedEmail() ? 'Copied!' : 'Copy to Clipboard'">
+              @if (copiedEmail()) {
+                <span class="copied-indicator">✓ Copied</span>
+              } @else {
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                </svg>
+              }
+            </button>
+          </div>
+
+          <!-- Phone Item -->
+          <div class="info-item">
+            <div class="item-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="item-details">
+              <div class="item-label">Mobile / WhatsApp</div>
+              <a [href]="'tel:' + personal.phone" class="item-val">{{ personal.phone }}</a>
+            </div>
+          </div>
+
+          <!-- Location Item -->
+          <div class="info-item">
+            <div class="item-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="item-details">
+              <div class="item-label">Location</div>
+              <div class="item-val">{{ personal.location }} (IST / UTC+5:30)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-channels">
+          <div class="channels-title">Competitive & Social Profiles</div>
+          <div class="channels-row">
+            <a [href]="personal.socialLinks.linkedin" target="_blank" rel="noopener noreferrer" class="channel-link" title="LinkedIn">
+              LinkedIn
+            </a>
+            <a [href]="personal.socialLinks.github" target="_blank" rel="noopener noreferrer" class="channel-link" title="GitHub">
+              GitHub
+            </a>
+            <a [href]="personal.socialLinks.leetcode" target="_blank" rel="noopener noreferrer" class="channel-link" title="LeetCode Guardian">
+              LeetCode
+            </a>
+            <a [href]="personal.socialLinks.codechef" target="_blank" rel="noopener noreferrer" class="channel-link" title="CodeChef 4-Star">
+              CodeChef
+            </a>
+            <a [href]="personal.socialLinks.codeforces" target="_blank" rel="noopener noreferrer" class="channel-link" title="Codeforces">
+              Codeforces
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Message Form Column -->
+      <div class="contact-form-card glass-card">
+        <h3 class="form-title">Send a Quick Message</h3>
+        
+        <form (ngSubmit)="onSubmit()" class="message-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input 
+                id="name" 
+                type="text" 
+                name="name" 
+                [(ngModel)]="contactForm.name" 
+                placeholder="e.g. Alex Morgan" 
+                required 
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email *</label>
+              <input 
+                id="email" 
+                type="email" 
+                name="email" 
+                [(ngModel)]="contactForm.email" 
+                placeholder="alex@company.com" 
+                required 
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input 
+              id="subject" 
+              type="text" 
+              name="subject" 
+              [(ngModel)]="contactForm.subject" 
+              placeholder="Backend Engineering / Systems Discussion" 
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="5" 
+              [(ngModel)]="contactForm.message" 
+              placeholder="Hi Sumit, we'd love to connect regarding..." 
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit-btn">
+            <span>Send Message</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+
+          @if (formSubmitted()) {
+            <div class="submit-success-toast">
+              Opening your default mail client with pre-filled message...
+            </div>
+          }
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

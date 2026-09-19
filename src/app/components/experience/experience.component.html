@@ -1,0 +1,90 @@
+<section id="experience" class="section experience-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <span>Career Journey</span>
+      </div>
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-subtitle">
+        Specializing in production banking microservices, event-driven architectures, and algorithmic system design.
+      </p>
+    </div>
+
+    <div class="timeline-container">
+      @for (exp of experiences; track exp.company + exp.period) {
+        <div class="timeline-item" [class.current]="exp.isCurrent">
+          <!-- Timeline Node Marker -->
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+
+          <!-- Timeline Content Card -->
+          <div class="timeline-card glass-card">
+            <div class="card-top-bar">
+              <div class="company-role-info">
+                <div class="role-title-row">
+                  <h3 class="role-title">{{ exp.role }}</h3>
+                  @if (exp.designation) {
+                    <span class="designation-pill" title="Official Infosys Designation">
+                      {{ exp.designation }}
+                    </span>
+                  }
+                  @if (exp.badge) {
+                    <span class="badge" [class.badge-emerald]="exp.isCurrent" [class.badge-blue]="!exp.isCurrent">
+                      {{ exp.badge }}
+                    </span>
+                  }
+                </div>
+                <div class="company-name">
+                  <span>{{ exp.company }}</span>
+                  @if (exp.client) {
+                    <span class="client-tag">
+                      &bull; Client: <strong>{{ exp.client }}</strong>
+                    </span>
+                  }
+                </div>
+              </div>
+
+              <div class="period-location">
+                <div class="period-badge">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>{{ exp.period }}</span>
+                </div>
+                <div class="location-text">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>{{ exp.location }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Highlights List -->
+            <ul class="highlights-list">
+              @for (point of exp.highlights; track point) {
+                <li class="highlight-item">
+                  <span class="bullet-arrow">▹</span>
+                  <span class="point-text">{{ point }}</span>
+                </li>
+              }
+            </ul>
+
+            <!-- Tech Stack Pill Group -->
+            <div class="exp-tech-stack">
+              @for (tech of exp.techStack; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

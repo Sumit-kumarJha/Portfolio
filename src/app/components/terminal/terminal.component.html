@@ -1,0 +1,77 @@
+<section id="terminal" class="section terminal-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <span>Interactive CLI</span>
+      </div>
+      <h2 class="section-title">Backend Developer Console</h2>
+      <p class="section-subtitle">
+        Type terminal commands or click the quick tags below to inspect background microservices, career benchmarks, and live status endpoints.
+      </p>
+    </div>
+
+    <!-- Terminal Window Box -->
+    <div class="terminal-window" (click)="focusInput()">
+      <!-- Window Top Bar -->
+      <div class="terminal-header">
+        <div class="window-controls">
+          <span class="control-dot dot-close"></span>
+          <span class="control-dot dot-minimize"></span>
+          <span class="control-dot dot-maximize"></span>
+        </div>
+        <div class="terminal-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+          <span>sumit&#64;backend-node-01: ~ (zsh)</span>
+        </div>
+        <div class="terminal-badge">
+          <span class="live-dot"></span>
+          <span>JAVA 21 &bull; SPRING 3.x</span>
+        </div>
+      </div>
+
+      <!-- Terminal Output & Prompt Body -->
+      <div class="terminal-body" #terminalBody>
+        @for (line of terminalService.lines(); track $index) {
+          <div class="terminal-line" [ngClass]="'line-' + line.type">
+            @if (line.type === 'input') {
+              <span class="prompt-text">{{ line.text }}</span>
+            } @else {
+              <pre class="line-content">{{ line.text }}</pre>
+            }
+          </div>
+        }
+
+        <!-- Active Input Line -->
+        <div class="terminal-input-row">
+          <span class="prompt-symbol">visitor&#64;sumit-jha:~$</span>
+          <input
+            #cmdInputRef
+            type="text"
+            class="terminal-input"
+            [(ngModel)]="commandInput"
+            (keydown.enter)="submitCommand()"
+            (keydown)="onKeyDown($event)"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="type 'help' or click buttons below..."
+          />
+        </div>
+      </div>
+
+      <!-- Quick Command Buttons -->
+      <div class="terminal-quick-bar" (click)="$event.stopPropagation()">
+        <span class="quick-label">QUICK CMDS:</span>
+        <div class="quick-chips">
+          @for (cmd of quickCommands; track cmd) {
+            <button type="button" class="quick-chip-btn" (click)="runQuickCommand(cmd)">
+              {{ cmd }}
+            </button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

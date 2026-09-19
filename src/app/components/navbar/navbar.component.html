@@ -1,0 +1,103 @@
+<header class="navbar" [class.scrolled]="isScrolled()">
+  <div class="container nav-container">
+    <a href="#hero" class="brand" (click)="closeMobileMenu()">
+      <span class="brand-code">&lt;</span>
+      <span class="brand-text">Sumit<span class="highlight">.dev</span></span>
+      <span class="brand-code">/&gt;</span>
+      <span class="status-indicator" title="Available for high-impact backend & systems engineering">
+        <span class="pulse-dot"></span>
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <ul class="nav-list">
+        @for (link of navLinks; track link.href) {
+          <li class="nav-item">
+            <a [href]="link.href" class="nav-link">{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <!-- Nav Actions -->
+    <div class="nav-actions">
+      <!-- Theme Switcher -->
+      <button 
+        type="button" 
+        class="theme-toggle-btn" 
+        (click)="toggleTheme()" 
+        [title]="themeService.currentTheme() === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+        aria-label="Toggle Theme">
+        @if (themeService.currentTheme() === 'dark') {
+          <!-- Sun Icon -->
+          <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        } @else {
+          <!-- Moon Icon -->
+          <svg class="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        }
+      </button>
+
+      <!-- Resume Button -->
+      <a href="#contact" class="btn btn-primary nav-cta">
+        <span>Get in Touch</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button 
+        type="button" 
+        class="mobile-toggle-btn" 
+        (click)="toggleMobileMenu()" 
+        aria-label="Toggle Menu">
+        @if (!isMobileMenuOpen()) {
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        } @else {
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        }
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  @if (isMobileMenuOpen()) {
+    <div class="mobile-drawer">
+      <ul class="mobile-nav-list">
+        @for (link of navLinks; track link.href) {
+          <li>
+            <a [href]="link.href" class="mobile-nav-link" (click)="closeMobileMenu()">
+              {{ link.label }}
+            </a>
+          </li>
+        }
+        <li class="mobile-cta-item">
+          <a href="#contact" class="btn btn-primary" (click)="closeMobileMenu()" style="width: 100%;">
+            Get in Touch
+          </a>
+        </li>
+      </ul>
+    </div>
+  }
+</header>

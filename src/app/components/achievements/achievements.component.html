@@ -1,0 +1,50 @@
+<section id="achievements" class="section achievements-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <span>Competitive Programming & Honors</span>
+      </div>
+      <h2 class="section-title">Algorithmic Excellence & Ranks</h2>
+      <p class="section-subtitle">
+        Rigorous problem-solving accolades earned across worldwide coding contests, biweeklies, and global hackathons.
+      </p>
+    </div>
+
+    <div class="achievements-grid">
+      @for (ach of achievements; track ach.title) {
+        <div class="achievement-card glass-card" [class.guardian-card]="ach.platform === 'LeetCode'">
+          <div class="card-glow-element"></div>
+          
+          <div class="card-top">
+            <div class="platform-badge" [class.badge-guardian]="ach.platform === 'LeetCode'">
+              @if (ach.platform === 'LeetCode') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l8 4.5v6.5c0 5-3.5 9.5-8 11-4.5-1.5-8-6-8-11V6.5L12 2z"/>
+                </svg>
+              } @else if (ach.platform === 'Contest') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                  <path d="M4 22h16"></path>
+                  <path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34"></path>
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                </svg>
+              } @else if (ach.platform === 'CodeChef') {
+                <span class="star-icon">★</span>
+              } @else {
+                <span class="cf-icon">CF</span>
+              }
+              <span>{{ ach.badge }}</span>
+            </div>
+
+            <div class="metric-highlight">{{ ach.metric }}</div>
+          </div>
+
+          <h3 class="ach-title">{{ ach.title }}</h3>
+          <h4 class="ach-subtitle">{{ ach.subtitle }}</h4>
+          <p class="ach-desc">{{ ach.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
