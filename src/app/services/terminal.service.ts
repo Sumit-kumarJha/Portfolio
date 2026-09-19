@@ -132,9 +132,10 @@ export class TerminalService {
           `  Phone:       ${pi.phone}`,
           `  LinkedIn:    ${pi.socialLinks.linkedin}`,
           `  GitHub:      ${pi.socialLinks.github}`,
-          `  LeetCode:    ${pi.socialLinks.leetcode}`,
-          `  CodeChef:    ${pi.socialLinks.codechef}`,
-          `  Codeforces:  ${pi.socialLinks.codeforces}`,
+          `  LeetCode:      ${pi.socialLinks.leetcode}`,
+          `  CodeChef:      ${pi.socialLinks.codechef}`,
+          `  Codeforces:    ${pi.socialLinks.codeforces}`,
+          `  GeeksforGeeks: ${pi.socialLinks.gfg}`,
         ]);
         break;
 

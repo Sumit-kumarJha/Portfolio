@@ -32,6 +32,7 @@ export class PortfolioDataService {
       leetcode: 'https://leetcode.com/u/_sumit_jha_/',
       codechef: 'https://www.codechef.com/users/sumitkjha',
       codeforces: 'https://codeforces.com/profile/Online_Engineer',
+      gfg: 'https://www.geeksforgeeks.org/profile/iamsumit',
     },
     heroStats: [
       { label: 'DSA Problems Solved', value: '2,500+', subtext: 'Guardian (Top 1%)' },

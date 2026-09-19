@@ -178,6 +178,10 @@
     font-weight: 700;
     font-size: 0.85rem;
     color: var(--accent-amber);
+
+    &.gfg-icon {
+      color: #34a853;
+    }
   }
 
   &.leetcode-chip {
