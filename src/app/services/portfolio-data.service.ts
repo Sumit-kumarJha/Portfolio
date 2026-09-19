@@ -31,7 +31,7 @@ export class PortfolioDataService {
       linkedin: 'https://linkedin.com/in/sumitkjha',
       leetcode: 'https://leetcode.com/u/sumitkjha',
       codechef: 'https://www.codechef.com/users/sumitkjha',
-      codeforces: 'https://codeforces.com/profile/sumitkjha',
+      codeforces: 'https://codeforces.com/profile/Online_Engineer',
     },
     heroStats: [
       { label: 'DSA Problems Solved', value: '2,500+', subtext: 'Guardian (Top 1%)' },
