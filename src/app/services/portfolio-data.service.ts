@@ -30,7 +30,7 @@ export class PortfolioDataService {
       github: 'https://github.com/Sumit-kumarJha',
       linkedin: 'https://www.linkedin.com/in/online-engineer/',
       leetcode: 'https://leetcode.com/u/_sumit_jha_/',
-      codechef: 'https://www.codechef.com/users/sumitkjha',
+      codechef: 'https://www.codechef.com/users/online_engr',
       codeforces: 'https://codeforces.com/profile/Online_Engineer',
       gfg: 'https://www.geeksforgeeks.org/profile/iamsumit',
     },
